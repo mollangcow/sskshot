@@ -11,6 +11,14 @@
 		23B056C22BCC3855000984DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B056C12BCC3855000984DF /* ContentView.swift */; };
 		23B056C42BCC3856000984DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23B056C32BCC3856000984DF /* Assets.xcassets */; };
 		23B056C72BCC3856000984DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23B056C62BCC3856000984DF /* Preview Assets.xcassets */; };
+		23B056D22BCC397F000984DF /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B056D12BCC397F000984DF /* GalleryView.swift */; };
+		23B056D42BCC39A4000984DF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B056D32BCC39A4000984DF /* SettingView.swift */; };
+		23B056D62BCC39B9000984DF /* VideoCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B056D52BCC39B9000984DF /* VideoCaptureView.swift */; };
+		23B056D82BCC39D4000984DF /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B056D72BCC39D4000984DF /* CameraView.swift */; };
+		23B056DC2BCC3A09000984DF /* AuthChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B056DB2BCC3A09000984DF /* AuthChecker.swift */; };
+		23B056DE2BCC3A1F000984DF /* Size+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B056DD2BCC3A1F000984DF /* Size+.swift */; };
+		23B056E02BCC3A35000984DF /* Path+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B056DF2BCC3A34000984DF /* Path+.swift */; };
+		23B056E22BCC3A49000984DF /* Haptic+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B056E12BCC3A49000984DF /* Haptic+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,14 @@
 		23B056C12BCC3855000984DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		23B056C32BCC3856000984DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23B056C62BCC3856000984DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		23B056D12BCC397F000984DF /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		23B056D32BCC39A4000984DF /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		23B056D52BCC39B9000984DF /* VideoCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCaptureView.swift; sourceTree = "<group>"; };
+		23B056D72BCC39D4000984DF /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		23B056DB2BCC3A09000984DF /* AuthChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthChecker.swift; sourceTree = "<group>"; };
+		23B056DD2BCC3A1F000984DF /* Size+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Size+.swift"; sourceTree = "<group>"; };
+		23B056DF2BCC3A34000984DF /* Path+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Path+.swift"; sourceTree = "<group>"; };
+		23B056E12BCC3A49000984DF /* Haptic+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Haptic+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +68,14 @@
 			isa = PBXGroup;
 			children = (
 				23B056BF2BCC3855000984DF /* sskshotApp.swift */,
+				23B056CD2BCC393F000984DF /* Extension */,
+				23B056D02BCC3959000984DF /* Model */,
+				23B056CF2BCC3952000984DF /* View */,
 				23B056C12BCC3855000984DF /* ContentView.swift */,
+				23B056D12BCC397F000984DF /* GalleryView.swift */,
+				23B056D32BCC39A4000984DF /* SettingView.swift */,
+				23B056D52BCC39B9000984DF /* VideoCaptureView.swift */,
+				23B056D72BCC39D4000984DF /* CameraView.swift */,
 				23B056C32BCC3856000984DF /* Assets.xcassets */,
 				23B056C52BCC3856000984DF /* Preview Content */,
 			);
@@ -65,6 +88,31 @@
 				23B056C62BCC3856000984DF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		23B056CD2BCC393F000984DF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				23B056DD2BCC3A1F000984DF /* Size+.swift */,
+				23B056DF2BCC3A34000984DF /* Path+.swift */,
+				23B056E12BCC3A49000984DF /* Haptic+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		23B056CF2BCC3952000984DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23B056D02BCC3959000984DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23B056DB2BCC3A09000984DF /* AuthChecker.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,11 +152,12 @@
 			};
 			buildConfigurationList = 23B056B72BCC3855000984DF /* Build configuration list for PBXProject "sskshot" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 23B056B32BCC3855000984DF;
 			productRefGroup = 23B056BD2BCC3855000984DF /* Products */;
@@ -137,8 +186,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23B056D62BCC39B9000984DF /* VideoCaptureView.swift in Sources */,
 				23B056C22BCC3855000984DF /* ContentView.swift in Sources */,
+				23B056E22BCC3A49000984DF /* Haptic+.swift in Sources */,
+				23B056D42BCC39A4000984DF /* SettingView.swift in Sources */,
+				23B056D82BCC39D4000984DF /* CameraView.swift in Sources */,
+				23B056DE2BCC3A1F000984DF /* Size+.swift in Sources */,
+				23B056DC2BCC3A09000984DF /* AuthChecker.swift in Sources */,
+				23B056D22BCC397F000984DF /* GalleryView.swift in Sources */,
 				23B056C02BCC3855000984DF /* sskshotApp.swift in Sources */,
+				23B056E02BCC3A35000984DF /* Path+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +332,14 @@
 				DEVELOPMENT_TEAM = CV4G9J35Y5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진 및 동영상 촬영을 위해 권한을 허용해 주세요.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진 및 동영상 저장을 위해 사진보관함 접근을 허용해 주세요.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진 및 동영상 저장을 위해 사진보관함 접근을 허용해 주세요.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,9 +347,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mollangcow.sskshot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,11 +368,14 @@
 				DEVELOPMENT_TEAM = CV4G9J35Y5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진 및 동영상 촬영을 위해 권한을 허용해 주세요.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진 및 동영상 저장을 위해 사진보관함 접근을 허용해 주세요.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진 및 동영상 저장을 위해 사진보관함 접근을 허용해 주세요.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,9 +383,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mollangcow.sskshot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
