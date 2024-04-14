@@ -32,7 +32,7 @@ struct SettingView: View {
                     
                     Spacer()
                     
-                    Text("Setting")
+                    Text("설정")
                         .font(.system(size: 17, weight: .bold))
                         .foregroundStyle(.white)
                     

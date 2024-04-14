@@ -332,6 +332,7 @@
 				DEVELOPMENT_TEAM = CV4G9J35Y5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "쓱샷";
 				INFOPLIST_KEY_NSCameraUsageDescription = "사진 및 동영상 촬영을 위해 권한을 허용해 주세요.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진 및 동영상 저장을 위해 사진보관함 접근을 허용해 주세요.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진 및 동영상 저장을 위해 사진보관함 접근을 허용해 주세요.";
@@ -368,6 +369,7 @@
 				DEVELOPMENT_TEAM = CV4G9J35Y5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "쓱샷";
 				INFOPLIST_KEY_NSCameraUsageDescription = "사진 및 동영상 촬영을 위해 권한을 허용해 주세요.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진 및 동영상 저장을 위해 사진보관함 접근을 허용해 주세요.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진 및 동영상 저장을 위해 사진보관함 접근을 허용해 주세요.";

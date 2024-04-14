@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVKit
+import PhotosUI
 
 struct ContentView: View {
     @State private var isRecording: Bool = false
@@ -17,6 +18,8 @@ struct ContentView: View {
     @State private var videoURL: URL?
     @State private var isVideoRecorded = false
     @State private var savedVideoPath: String?
+    @State private var selectedPhoto: PhotosPickerItem?
+    @State private var image: Image?
     
     var body: some View {
         ZStack {
@@ -79,37 +82,41 @@ struct ContentView: View {
                 
                 HStack {
                     // Gallery Button
-                    ZStack {
-                        Circle()
-                            .fill(.gray.opacity(0.2))
-                            .frame(width: 68, height: 68)
-                        Button(action: {
-                            isShowingGallery.toggle()
-                            HapticManager.instance.impact(style: .medium)
-                        }, label: {
-                            ZStack {
-                                Circle()
-                                    .fill(.gray.opacity(0.3))
-                                    .frame(width: 62, height: 62)
-                                Image(systemName: "photo.stack.fill")
-                                    .foregroundColor(.white)
-                            }
-                        })
-                        .fullScreenCover(isPresented: $isShowingGallery) {
-                            GalleryView(isShowingGallery: $isShowingGallery)
+                    Button(action: {
+                        isShowingGallery.toggle()
+                        HapticManager.instance.impact(style: .medium)
+                    }, label: {
+                        ZStack {
+                            Circle()
+                                .fill(.white.opacity(0.5))
+                                .frame(width: 62, height: 62)
+                            Image(systemName: "photo.stack.fill")
+                                .foregroundColor(.white)
                         }
+                    })
+                    .fullScreenCover(isPresented: $isShowingGallery) {
+                        GalleryView(isShowingGallery: $isShowingGallery)
                     }
+//                    PhotosPicker(selection: $selectedPhoto) {
+//                        Image(systemName: "photo.stack.fill")
+//                            .foregroundColor(.white)
+//                            .background() {
+//                                Circle()
+//                                    .fill(.white.opacity(0.5))
+//                                    .frame(width: 62, height: 62)
+//                            }
+//                    }
                     
                     Spacer()
                     
                     // Recording Button
                     ZStack {
                         Circle()
-                            .fill(.gray.opacity(0.2))
+                            .fill(.white.opacity(0.5))
                             .frame(width: 84, height: 84)
                         Button(action: {
                             // recording logic
-                            withAnimation(.bouncy) {
+                            withAnimation(.bouncy(duration: 0.4)) {
                                 isRecording.toggle()
                             }
                             HapticManager.instance.notification(type: .success)
@@ -131,23 +138,20 @@ struct ContentView: View {
                     Spacer()
                     
                     // Picturing Button
-                    ZStack {
+                    Button(action: {
+                        // recording logic
+                        HapticManager.instance.notification(type: .success)
+                    }, label: {
                         Circle()
-                            .fill(.gray.opacity(0.2))
-                            .frame(width: 68, height: 68)
-                        Button(action: {
-                            // recording logic
-                            HapticManager.instance.notification(type: .success)
-                        }, label: {
-                            Circle()
-                                .fill(.white)
-                                .frame(width: 60, height: 60)
-                        })
-                    }
+                            .fill(.white)
+                            .frame(width: 62, height: 62)
+                    })
                 }
                 .padding(.horizontal, 40)
                 .padding(.bottom, 20)
             }
+            .padding(.vertical, 30)
         }
+        .ignoresSafeArea()
     }
 }

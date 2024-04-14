@@ -32,7 +32,7 @@ struct GalleryView: View {
                     
                     Spacer()
                     
-                    Text("Gallery")
+                    Text("사진 보관함")
                         .font(.system(size: 17, weight: .bold))
                         .foregroundStyle(.white)
                     
