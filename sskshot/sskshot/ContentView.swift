@@ -22,136 +22,112 @@ struct ContentView: View {
     @State private var image: Image?
     
     var body: some View {
-        ZStack {
-            if let videoURL = videoURL {
-                VideoPlayer(player: AVPlayer(url: videoURL))
-                    .frame(height: 300)
-                    .onAppear {
-                    }
-            } else {
-                CameraView(isRecording: $isRecording, didCaptureVideo: { url in
-                    videoURL = url
-                    isVideoRecorded = false
-                })
-            }
-            
-            VStack(spacing: 0) {
-                HStack {
-                    Button(action: {
-                        // flash light
-                        isFlash.toggle()
-                        HapticManager.instance.impact(style: .medium)
-                    }, label: {
-                        ZStack {
-                            Circle()
-                                .fill(.black.opacity(0.3))
-                                .frame(width: 44, height: 44)
+        VStack(spacing: 0) {
+            // top navi bar
+            HStack {
+                // flash button
+                Button {
+                    isFlash.toggle()
+                    HapticManager.instance.impact(style: .medium)
+                } label: {
+                    Circle()
+                        .foregroundStyle(Color.secondary.opacity(0.8))
+                        .overlay {
                             Image(systemName: isFlash ? "bolt.fill" : "bolt.slash.fill")
                                 .foregroundColor(isFlash ? .yellow : .white)
                         }
-                    })
-
-                    Spacer()
-                    
-                    Text("00:00:00")
-                        .font(.system(size: 22))
-                        .foregroundColor(.white)
-                        .monospaced()
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        isShowingSetting.toggle()
-                        HapticManager.instance.impact(style: .medium)
-                    }, label: {
-                        ZStack {
-                            Circle()
-                                .fill(.black.opacity(0.3))
-                                .frame(width: 44, height: 44)
-                            Image(systemName: "gear")
-                                .foregroundColor(.white)
-                        }
-                    })
-                    .fullScreenCover(isPresented: $isShowingSetting) {
-                        SettingView(isShowingSetting: $isShowingSetting)
-                    }
-                }
-                .padding(.all, 20)
+                        .frame(width: 44, height: 44)
+                } // button
+                .contentTransition(.symbolEffect(.replace))
                 
                 Spacer()
                 
-                HStack {
-                    // Gallery Button
-                    Button(action: {
-                        isShowingGallery.toggle()
-                        HapticManager.instance.impact(style: .medium)
-                    }, label: {
-                        ZStack {
-                            Circle()
-                                .fill(.white.opacity(0.5))
-                                .frame(width: 62, height: 62)
-                            Image(systemName: "photo.stack.fill")
-                                .foregroundColor(.white)
+                // setting button
+                Button {
+                    isShowingSetting.toggle()
+                    HapticManager.instance.impact(style: .medium)
+                } label: {
+                    Circle()
+                        .foregroundStyle(Color.secondary.opacity(0.8))
+                        .overlay {
+                            Image(systemName: "gear")
+                                .foregroundStyle(Color.white)
                         }
-                    })
-                    .fullScreenCover(isPresented: $isShowingGallery) {
-                        GalleryView(isShowingGallery: $isShowingGallery)
+                        .frame(width: 44, height: 44)
+                } // button
+                .sheet(isPresented: $isShowingSetting) {
+                    SettingView(isShowingSetting: $isShowingSetting)
+                        .presentationDetents([.medium])
+                } //sheet
+            } //HStack
+            .padding(.horizontal, 20)
+            
+            Spacer()
+            
+            // video indicator
+            Text("0:00:00.00")
+                .padding(.all, 8)
+                .background(Color.secondary.opacity(0.8))
+                .clipShape(
+                    RoundedRectangle(cornerRadius: 8)
+                )
+                .foregroundStyle(Color.white)
+                .monospaced()
+            
+            // bottom tool bar
+            HStack {
+                // gallery button
+                Button {
+                    isShowingGallery.toggle()
+                    HapticManager.instance.impact(style: .medium)
+                } label: {
+                    Circle()
+                        .foregroundStyle(Color.secondary.opacity(0.8))
+                        .overlay{
+                            Image(systemName: "photo.stack.fill")
+                                .foregroundStyle(Color.white)
+                        }
+                        .frame(width: 62, height: 62)
+                } // button
+                .sheet(isPresented: $isShowingGallery) {
+                    GalleryView(isShowingGallery: $isShowingGallery)
+                } // sheet
+                
+                Spacer()
+                
+                // recording button
+                Button {
+                    withAnimation(.bouncy(duration: 0.3)) {
+                        isRecording.toggle()
                     }
-//                    PhotosPicker(selection: $selectedPhoto) {
-//                        Image(systemName: "photo.stack.fill")
-//                            .foregroundColor(.white)
-//                            .background() {
-//                                Circle()
-//                                    .fill(.white.opacity(0.5))
-//                                    .frame(width: 62, height: 62)
-//                            }
-//                    }
-                    
-                    Spacer()
-                    
-                    // Recording Button
-                    ZStack {
-                        Circle()
-                            .fill(.white.opacity(0.5))
-                            .frame(width: 84, height: 84)
-                        Button(action: {
-                            // recording logic
-                            withAnimation(.bouncy(duration: 0.4)) {
-                                isRecording.toggle()
-                            }
-                            HapticManager.instance.notification(type: .success)
-                        }, label: {
-                            ZStack {
-                                Circle()
-                                    .fill(.clear)
-                                    .frame(width: 72, height: 72)
-                                AnimationRectangle(cornerRadius: isRecording ? 4 : 36)
-                                    .fill(.red)
-                                    .frame(
-                                        width: isRecording ? 30 : 72,
-                                        height: isRecording ? 30: 72
-                                    )
-                            }
-                        })
-                    }
-                    
-                    Spacer()
-                    
-                    // Picturing Button
-                    Button(action: {
-                        // recording logic
-                        HapticManager.instance.notification(type: .success)
-                    }, label: {
-                        Circle()
-                            .fill(.white)
-                            .frame(width: 62, height: 62)
-                    })
-                }
-                .padding(.horizontal, 40)
-                .padding(.bottom, 20)
-            }
-            .padding(.vertical, 30)
+                    HapticManager.instance.notification(type: .success)
+                } label: {
+                    Circle()
+                        .foregroundStyle(Color.red.opacity(0.3))
+                        .overlay {
+                            AnimationRectangle(cornerRadius: isRecording ? 4 : 37)
+                                .foregroundStyle(Color.red)
+                                .frame(
+                                    width: isRecording ? 30 : 74,
+                                    height: isRecording ? 30: 74
+                                )
+                        }
+                        .frame(width: 74, height: 74)
+                } // button
+                
+                Spacer()
+                
+                // capture button
+                Button {
+                    HapticManager.instance.notification(type: .success)
+                } label: {
+                    Circle()
+                        .foregroundStyle(.white)
+                        .frame(width: 62, height: 62)
+                } // button
+            } // HStack
+            .padding(.all, 32)
         }
-        .ignoresSafeArea()
+        .background(Color.black)
     }
 }

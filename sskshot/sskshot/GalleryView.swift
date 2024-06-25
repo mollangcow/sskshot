@@ -15,34 +15,29 @@ struct GalleryView: View {
             Color.black.ignoresSafeArea()
             VStack(spacing: 0) {
                 HStack {
+                    Text("Gallery")
+                        .font(.system(size: 22, weight: .bold))
+                        .foregroundStyle(Color.white)
+                        .padding(.leading, 4)
+                    
+                    Spacer()
+                    
                     Button(action: {
                         isShowingGallery.toggle()
                         HapticManager.instance.impact(style: .medium)
                     }, label: {
-                        ZStack {
-                            Rectangle()
-                                .frame(width: 44, height: 44)
-                                .foregroundStyle(.clear)
-                            Image(systemName: "xmark")
-                                .resizable()
-                                .frame(width: 16, height: 16)
-                                .foregroundStyle(.white)
-                        }
+                        Image(systemName: "xmark.circle.fill")
+                            .resizable()
+                            .frame(width: 28, height: 28)
+                            .foregroundStyle(Color.secondary)
+                            .background(
+                                Rectangle()
+                                    .frame(width: 44, height: 44)
+                                    .foregroundStyle(Color.clear)
+                            )
                     })
-                    
-                    Spacer()
-                    
-                    Text("사진 보관함")
-                        .font(.system(size: 17, weight: .bold))
-                        .foregroundStyle(.white)
-                    
-                    Spacer()
-                    
-                    Rectangle()
-                        .frame(width: 44, height: 44)
-                        .foregroundStyle(.clear)
-                }
-                .padding(.horizontal, 20)
+                } // HStack
+                .padding(.all, 20)
                 
                 Spacer()
             }
